@@ -1,7 +1,7 @@
 package api
 
 import (
-	"Aurora-go/model"
+	"aurora-sdk-go/model"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"

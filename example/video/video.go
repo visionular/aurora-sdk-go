@@ -1,8 +1,8 @@
 package video
 
 import (
-	"Aurora-go/api"
-	"Aurora-go/model"
+	"aurora-sdk-go/api"
+	"aurora-sdk-go/model"
 	"encoding/json"
 	"fmt"
 )
