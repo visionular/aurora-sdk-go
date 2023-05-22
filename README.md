@@ -4,9 +4,9 @@
 
 Official Aurora API wrapper for golang projects, supporting both AuroraLive and AuroraCloud.
 
-[AuroraLive](https://docs-dev.visionular.com/auroralive/api/#putmetadata) is a managed live streaming solution that provides high-definition and uninterrupted live video services that are quick and easy to set up, with low latency and supports a high number of concurrent viewers.
+[AuroraLive](https://docs.visionular.com/auroralive/api/#putmetadata) is a managed live streaming solution that provides high-definition and uninterrupted live video services that are quick and easy to set up, with low latency and supports a high number of concurrent viewers.
 
-[AuroraCloud](https://docs-dev.visionular.com/auroracloud) is an audio and video media processing service based on the intelligent encoding and artificial intelligence content adaptive video processing technology of Visionular. AuroraCloud provides a scalable, reliable, easy-to-use and maintenance-free cloud service for transcoding media files.
+[AuroraCloud](https://docs.visionular.com/auroracloud) is an audio and video media processing service based on the intelligent encoding and artificial intelligence content adaptive video processing technology of Visionular. AuroraCloud provides a scalable, reliable, easy-to-use and maintenance-free cloud service for transcoding media files.
 
 ## Installation
 
@@ -24,7 +24,7 @@ For almost all API responses, the object you're looking for will be in the `data
 
 ### Authentication
 
-To use the Aurora API, you'll need an access token and a secret. [documentation.](https://docs-dev.visionular.com/auroralive/api#signature-method)
+To use the Aurora API, you'll need an access token and a secret. [documentation.](https://docs.visionular.com/auroralive/api#signature-method)
 
 Its up to you to manage your token and secret. In our examples, we read them from `AccessKey` and `SecretKey` in your environment.
 
@@ -74,18 +74,18 @@ func main() {
 ### AuroraLive Api List
 |Interfaces| Reference                                                                                    |
 |----|----------------------------------------------------------------------------------------------|
-|CreateLiveStream| [create-a-live-stream](https://docs-dev.visionular.com/auroralive/api/#create-a-live-stream) |
-|DisableLiveStream| [disabling-a-live-stream](https://docs-dev.visionular.com/auroralive/api/#disabling-a-live-stream) |
-|EnableLiveStream| [resuming-a-live-stream](https://docs-dev.visionular.com/auroralive/api/#resuming-a-live-stream) |
-|ListLiveStreams| [list-live-streams](https://docs-dev.visionular.com/auroralive/api/#list-live-streams) |
-|QueryLiveStreamInfo| [query-a-live-stream](https://docs-dev.visionular.com/auroralive/api/#query-a-live-stream) |
+|CreateLiveStream| [create-a-live-stream](https://docs.visionular.com/auroralive/api/#create-a-live-stream) |
+|DisableLiveStream| [disabling-a-live-stream](https://docs.visionular.com/auroralive/api/#disabling-a-live-stream) |
+|EnableLiveStream| [resuming-a-live-stream](https://docs.visionular.com/auroralive/api/#resuming-a-live-stream) |
+|ListLiveStreams| [list-live-streams](https://docs.visionular.com/auroralive/api/#list-live-streams) |
+|QueryLiveStreamInfo| [query-a-live-stream](https://docs.visionular.com/auroralive/api/#query-a-live-stream) |
 
 
 ### AuroraCloud Api List
-|Interfaces| Reference                                                                                    |
-|----|----------------------------------------------------------------------------------------------|
-|QueryTemplate| [query_template](https://docs-dev.visionular.com/auroracloud/api#query_template) |
-|ListTemplate| [list_template](https://docs-dev.visionular.com/auroracloud/api#list_template) |
-|AddStorage| [add_storage](https://docs-dev.visionular.com/auroracloud/api#add_storage) |
-|ListStorage| [list_storage](https://docs-dev.visionular.com/auroracloud/api#list_storage) |
-|DeleteStorage| [del_storage](https://docs-dev.visionular.com/auroracloud/api#del_storage) |
+|Interfaces| Reference                                                                    |
+|----|------------------------------------------------------------------------------|
+|QueryTemplate| [query_template](https://docs.visionular.com/auroracloud/api#query_template) |
+|ListTemplate| [list_template](https://docs.visionular.com/auroracloud/api#list_template)   |
+|AddStorage| [add_storage](https://docs.visionular.com/auroracloud/api#add_storage)       |
+|ListStorage| [list_storage](https://docs.visionular.com/auroracloud/api#list_storage)     |
+|DeleteStorage| [del_storage](https://docs.visionular.com/auroracloud/api#del_storage)       |
