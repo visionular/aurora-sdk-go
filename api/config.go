@@ -18,8 +18,7 @@ type ConfigurationOption func(*Configuration)
 
 func NewConfiguration(opts ...ConfigurationOption) *Configuration {
 	cfg := &Configuration{
-		basePath:  "https://api.visionular.com",
-		userAgent: "Aurora Go | 0.0.1",
+		userAgent: "Aurora Go | 1.1.3",
 	}
 	for _, opt := range opts {
 		opt(cfg)
