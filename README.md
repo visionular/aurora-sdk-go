@@ -90,22 +90,22 @@ func main() {
 |ListStorage| [list_storage](https://docs.visionular.com/auroracloud/api#list_storage)     |
 |DeleteStorage| [del_storage](https://docs.visionular.com/auroracloud/api#del_storage)       |
 
-##### Errors & Error Handling
+### Errors & Error Handling
 
 All API calls return an err as their final return value. Below is documented the errors you might want to check for. You can check error.code or error.msg on all errors to see the full HTTP response.
 
-##### BadParam
+### BadParam
 
 BadParam is returned when a you make a bad request to Aurora, this likely means you've passed in an invalid parameter to the API call.
 
-##### AuthFail
+### AuthFail
 
 AuthFail is returned when Aurora cannot authenticate your request.  [You should check you have configured your credentials correctly.](#Authentication)
 
-##### EmptyResult
+### EmptyResult
 
 EmptyResult is returned when a resource is not found. This is useful when trying to get an entity by its ID.
 
-##### InternalError
+### InternalError
 
 InternalError is returned when Aurora returns a HTTP 5XX Status Code. If you encounter this reproducibly, please get in touch
