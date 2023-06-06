@@ -1,6 +1,6 @@
 # Aurora Go
 
-1. [x] ![img.png](img.png)
+![img.png](img.png)
 
 Official Aurora API wrapper for golang projects, supporting both AuroraLive and AuroraCloud.
 
