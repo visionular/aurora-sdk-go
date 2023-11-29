@@ -2,13 +2,13 @@ package model
 
 // CreateStreamRequest  Request
 type CreateStreamRequest struct {
-	Type              string                   `json:"type"`
-	ReconnectWindow   *int                     `json:"reconnect_window"`
-	UserMetadata      string                   `json:"user_metadata"`
-	SimulcastTargets  []*SimulcastTargets      `json:"simulcast_targets"`
-	Policy            string                   `json:"policy"`
-	Record            bool                     `json:"record"`
-	WatermarkSettings *StreamWatermarkSettings `json:"watermark_settings"`
+	Type              string                   `json:"type,omitempty"`
+	ReconnectWindow   *int                     `json:"reconnect_window,omitempty"`
+	UserMetadata      string                   `json:"user_metadata,omitempty"`
+	SimulcastTargets  []*SimulcastTargets      `json:"simulcast_targets,omitempty"`
+	Policy            string                   `json:"policy,omitempty"`
+	Record            bool                     `json:"record,omitempty"`
+	WatermarkSettings *StreamWatermarkSettings `json:"watermark_settings,omitempty"`
 }
 
 type SimulcastTargets struct {
