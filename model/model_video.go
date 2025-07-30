@@ -120,8 +120,8 @@ type TemplateListApiResponse struct {
 }
 
 type TemplateListApi struct {
-	Num  int                   `json:"num"`
-	List []TemplateApiResponse `json:"list"`
+	Num  int           `json:"num"`
+	List []TemplateApi `json:"list"`
 }
 
 type StorageApiRequest struct {
@@ -132,6 +132,15 @@ type StorageApiRequest struct {
 	Notify    string `json:"notify,omitempty"`
 	StorageAk string `json:"storage_ak,omitempty"`
 	StorageSk string `json:"storage_sk,omitempty"`
+}
+
+type StorageResponse struct {
+	Code int    `json:"code"`
+	Msg  string `json:"msg"`
+	Data struct {
+		StorageID string `json:"storage_id"`
+	} `json:"data,omitempty"`
+	RequestID string `json:"request_id"`
 }
 
 type StorageApiResponse struct {
@@ -175,6 +184,77 @@ type TaskResponse struct {
 	Msg  string `json:"msg"`
 	Data struct {
 		TaskID string `json:"task_id"`
+	} `json:"data,omitempty"`
+	RequestID string `json:"request_id"`
+}
+
+type TaskApiRequest struct {
+	TemplateName string `json:"template_name"`
+	StorageID    string `json:"storage_id"`
+	Input        string `json:"input"`
+	Output       string `json:"output"`
+}
+
+type TaskApi struct {
+	TaskId                string  `json:"task_id"`
+	Input                 string  `json:"input"`
+	Output                string  `json:"output"`
+	TemplateName          string  `json:"template_name"`
+	StorageId             string  `json:"storage_id"`
+	Region                string  `json:"region"`
+	CreatedTime           int64   `json:"created_time"`
+	StartedTime           int64   `json:"started_time"`
+	FinishedTime          int64   `json:"finished_time"`
+	Status                string  `json:"status"`
+	Duration              float64 `json:"duration"`
+	SourceBitrate         float64 `json:"source_bitrate"`
+	SrcSize               int64   `json:"source_size"`
+	SourceResolution      string  `json:"source_resolution"`
+	SourceFramerate       float64 `json:"source_framerate"`
+	SourceVideoBitrate    float64 `json:"source_video_bitrate"`
+	SourceAudioBitrate    float64 `json:"source_audio_bitrate"`
+	SourceVideoCodec      string  `json:"source_video_codec"`
+	SourceAudioCodec      string  `json:"source_audio_codec"`
+	OutputSize            int64   `json:"output_size"`
+	OutputResolution      string  `json:"output_resolution"`
+	OutputFramerate       float64 `json:"output_framerate"`
+	OutputBitrate         float64 `json:"output_bitrate"`
+	OutputMediaSize       int64   `json:"output_media_size,omitempty"`
+	Ratio                 float64 `json:"ratio"`
+	SpendTime             float64 `json:"spend_time"`
+	Code                  int     `json:"code"`
+	Progress              int     `json:"progress"`
+	Message               string  `json:"message"`
+	OutputVideoCodec      string  `json:"output_video_codec"`
+	OutputAudioCodec      string  `json:"output_audio_codec"`
+	Format                string  `json:"format"`
+	OutputAudioSamplerate string  `json:"output_audio_samplerate"`
+	EncryptInfo           string  `json:"encrypt_info"`
+	CustomInfo            string  `json:"custom_info"`
+}
+
+type TaskApiResponse struct {
+	Code      int     `json:"code"`
+	Msg       string  `json:"msg"`
+	Data      TaskApi `json:"data,omitempty"`
+	RequestID string  `json:"request_id"`
+}
+
+type TaskListApiRequest struct {
+	Count     int    `json:"count"`
+	StartNum  int    `json:"start_num"`
+	StartTime int64  `json:"start_time"`
+	EndTime   int64  `json:"end_time"`
+	Status    string `json:"status"`
+}
+
+type TaskListApiResponse struct {
+	Code int    `json:"code"`
+	Msg  string `json:"msg"`
+	Data struct {
+		Total int64     `json:"total"`
+		Num   int       `json:"num"`
+		List  []TaskApi `json:"list"`
 	} `json:"data,omitempty"`
 	RequestID string `json:"request_id"`
 }

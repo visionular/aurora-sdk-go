@@ -18,7 +18,7 @@ type ConfigurationOption func(*Configuration)
 
 func NewConfiguration(opts ...ConfigurationOption) *Configuration {
 	cfg := &Configuration{
-		userAgent: "Aurora Go | 1.1.3",
+		userAgent: "Aurora Go | 1.1.5",
 	}
 	for _, opt := range opts {
 		opt(cfg)
