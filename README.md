@@ -2,11 +2,11 @@
 
 ![img.png](img.png)
 
-Official Aurora API wrapper for golang projects, supporting both AuroraLive and AuroraCloud.
+Official Aurora API wrapper for golang projects, supporting both AuroraCloud Live and AuroraCloud.
 
-[AuroraLive](https://docs.visionular.com/auroralive/api/#putmetadata) is a managed live streaming solution that provides high-definition and uninterrupted live video services that are quick and easy to set up, with low latency and supports a high number of concurrent viewers.
+[AuroraCloud Live](https://docs.visionular.com/auroralive) is a managed live streaming solution that provides high-definition and uninterrupted live video services that are quick and easy to set up, with low latency and supports a high number of concurrent viewers.
 
-[AuroraCloud](https://docs.visionular.com/auroracloud) is an audio and video media processing service based on the intelligent encoding and artificial intelligence content adaptive video processing technology of Visionular. AuroraCloud provides a scalable, reliable, easy-to-use and maintenance-free cloud service for transcoding media files.
+[AuroraCloud VOD](https://docs.visionular.com/auroracloud) is an audio and video media processing service based on the intelligent encoding and artificial intelligence content adaptive video processing technology of Visionular. AuroraCloud provides a scalable, reliable, easy-to-use and maintenance-free cloud service for transcoding media files.
 
 ## Installation
 
@@ -24,24 +24,22 @@ For almost all API responses, the object you're looking for will be in the `data
 
 ### Authentication
 
-To use the Aurora API, you'll need an access token and a secret. [documentation.](https://docs.visionular.com/auroralive/api#signature-method)
+To use the Aurora API, you'll need an access token and a secret. [documentation.](https://docs.visionular.com/auroracloud/apireference/#section/Overview/Signature-method)
 
 Its up to you to manage your token and secret. In our examples, we read them from `AccessKey` and `SecretKey` in your environment.
 
-
 ### Example Usage
-
 
 Below is a quick example of using Aurora-go to list the Video assets stored in your Aurora account.
 
 Be sure to also checkout the [example directory](example/).
 
-
-```
+```go
 package main
 
 import (
 	"fmt"
+
 	"github.com/visionular/aurora-sdk-go/api"
 	"github.com/visionular/aurora-sdk-go/model"
 )
@@ -71,24 +69,28 @@ func main() {
 
 ```
 
-### AuroraLive Api List
-|Interfaces| Reference                                                                                    |
-|----|----------------------------------------------------------------------------------------------|
-|CreateLiveStream| [create-a-live-stream](https://docs.visionular.com/auroralive/api/#create-a-live-stream) |
-|DisableLiveStream| [disabling-a-live-stream](https://docs.visionular.com/auroralive/api/#disabling-a-live-stream) |
-|EnableLiveStream| [resuming-a-live-stream](https://docs.visionular.com/auroralive/api/#resuming-a-live-stream) |
-|ListLiveStreams| [list-live-streams](https://docs.visionular.com/auroralive/api/#list-live-streams) |
-|QueryLiveStreamInfo| [query-a-live-stream](https://docs.visionular.com/auroralive/api/#query-a-live-stream) |
+### AuroraCloud Live Api List
 
+| Interfaces          | Reference                                                                                                                                                         |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CreateLiveStream    | [create-a-live-stream](https://docs.visionular.com/auroralive/apireference/#tag/Live-Stream/paths/~1live~1v1~1live-streams/post)                                  |
+| DisableLiveStream   | [disabling-a-live-stream](https://docs.visionular.com/auroralive/apireference/#tag/Live-Stream/paths/~1live~1v1~1live-streams~1%7Blive_stream_id%7D~1disable/put) |
+| EnableLiveStream    | [resuming-a-live-stream](https://docs.visionular.com/auroralive/apireference/#tag/Live-Stream/paths/~1live~1v1~1live-streams~1%7Blive_stream_id%7D~1enable/put)   |
+| ListLiveStreams     | [list-live-streams](https://docs.visionular.com/auroralive/apireference/#tag/Live-Stream/paths/~1live~1v1~1live-streams/get)                                      |
+| QueryLiveStreamInfo | [query-a-live-stream](https://docs.visionular.com/auroralive/apireference/#tag/Live-Stream/paths/~1live~1v1~1live-streams~1%7Blive_stream_id%7D/get)              |
 
-### AuroraCloud Api List
-|Interfaces| Reference                                                                    |
-|----|------------------------------------------------------------------------------|
-|QueryTemplate| [query_template](https://docs.visionular.com/auroracloud/api#query_template) |
-|ListTemplate| [list_template](https://docs.visionular.com/auroracloud/api#list_template)   |
-|AddStorage| [add_storage](https://docs.visionular.com/auroracloud/api#add_storage)       |
-|ListStorage| [list_storage](https://docs.visionular.com/auroracloud/api#list_storage)     |
-|DeleteStorage| [del_storage](https://docs.visionular.com/auroracloud/api#del_storage)       |
+### AuroraCloud VOD Api List
+
+| Interfaces    | Reference                                                                                                                        |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------|
+| QueryTemplate | [query_template](https://docs.visionular.com/auroracloud/apireference/#tag/Template/paths/~1vodencoding~1v1~1query_template/get) |
+| ListTemplate  | [list_template](https://docs.visionular.com/auroracloud/apireference/#tag/Template/paths/~1vodencoding~1v1~1list_template/get)   |
+| AddStorage    | [add_storage](https://docs.visionular.com/auroracloud/apireference/#tag/Storage/paths/~1vodencoding~1v1~1add_storage/post)       |
+| ListStorage   | [list_storage](https://docs.visionular.com/auroracloud/apireference/#tag/Storage/paths/~1vodencoding~1v1~1list_storage/get)      |
+| DeleteStorage | [del_storage](https://docs.visionular.com/auroracloud/apireference/#tag/Storage/paths/~1vodencoding~1v1~1del_storage/delete)     |
+| CreateTask    | [create_task](https://docs.visionular.com/auroracloud/apireference/#tag/Task/paths/~1vodencoding~1v1~1create_task/post)          |
+| QueryTask     | [query_task](https://docs.visionular.com/auroracloud/apireference/#tag/Task/paths/~1vodencoding~1v1~1query_task/get)             |
+| ListTask      | [list_task](https://docs.visionular.com/auroracloud/apireference/#tag/Task/paths/~1vodencoding~1v1~1list_task/get)               |
 
 ### Errors & Error Handling
 
